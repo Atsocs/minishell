@@ -1,12 +1,14 @@
 #include "caiosh.h"
 
+#define UNUSED(x) (void)(x)
+
 #define BUFFER_SIZE 1024
 
 #define MAX_ARGS 256
 
 char **parse_get_tokens(char *cmd)
 {
-    int i, argc = 0;
+    int argc = 0;
     char **argv = (char **)malloc(sizeof(char *) * MAX_ARGS);
     char *token = strtok(cmd, " \t\n");
     while (token != NULL && argc < MAX_ARGS - 1)
@@ -75,6 +77,7 @@ char *parse_get_stdout(char **tokens)
 
 bool is_malformed(char *cmd)
 {
+    UNUSED(cmd);
     // todo: treat this in the second bimester
     return false;
 }
@@ -166,7 +169,7 @@ void caiosh_print_prompt()
     printf("caiosh> ");
 }
 
-int main(int argc, char **argv)
+int main()
 {
     caiosh_print_welcome();
     caiosh_loop();
