@@ -75,7 +75,7 @@ char *parse_get_stdout(char **tokens)
 
 bool is_malformed(char *cmd)
 {
-    // todo
+    // todo: treat this in the second bimester
     return false;
 }
 
