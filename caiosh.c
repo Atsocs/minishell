@@ -86,7 +86,6 @@ int redirect(char *path, int flags, int default_fd)
         return default_fd;
     }
 
-    printf("Opening file %s\n", path);
     int fd = open(path, flags, S_IRUSR | S_IWUSR);
 
     if (fd == -1)
@@ -94,8 +93,6 @@ int redirect(char *path, int flags, int default_fd)
         perror("open");
         exit(EXIT_FAILURE);
     }
-
-    printf("File %s opened with fd %d\n", path, fd);
 
     return fd;
 }
