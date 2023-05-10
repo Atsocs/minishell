@@ -1,13 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(int argc, char *argv[])
+int main()
 {
-    int sum = 0;
-    for (int i = 1; i < argc; i++)
-    {
-        sum += atoi(argv[i]);
-    }
-    printf("%d\n", sum);
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d\n", a + b);
     return 0;
 }
